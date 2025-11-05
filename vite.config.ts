@@ -5,6 +5,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 
 const base = process.env.BASE_PATH || '/'
 const isPreview = process.env.IS_PREVIEW  ? true : false;
+
 // https://vite.dev/config/
 export default defineConfig({
   define: {
@@ -54,7 +55,6 @@ export default defineConfig({
             'Outlet'
           ]
         },
-        // React i18n
         {
           'react-i18next': [
             'useTranslation',
@@ -67,8 +67,8 @@ export default defineConfig({
   ],
   base,
   build: {
-    sourcemap: true,
-    outDir: 'out',
+    sourcemap: false,  // Changed to false for production
+    outDir: 'dist',    // ✅ Changed from 'out' to 'dist'
   },
   resolve: {
     alias: {
