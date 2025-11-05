@@ -1,0 +1,100 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Custom animations for AI effects */
+@keyframes neural-pulse {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.8; 
+    transform: scale(1.2);
+  }
+}
+
+@keyframes constellation-twinkle {
+  0%, 100% { 
+    opacity: 0.2; 
+    transform: scale(0.8);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.2);
+  }
+}
+
+@keyframes line-flow {
+  0% { 
+    transform: translateX(-100%) rotate(0deg);
+    opacity: 0;
+  }
+  50% { 
+    opacity: 0.6;
+  }
+  100% { 
+    transform: translateX(100vw) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.neural-pulse {
+  animation: neural-pulse 3s ease-in-out infinite;
+}
+
+.constellation-twinkle {
+  animation: constellation-twinkle 4s ease-in-out infinite;
+}
+
+.line-flow {
+  animation: line-flow 8s linear infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom glow effects */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 255, 245, 0.3);
+}
+
+.glow-cyan:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 245, 0.5);
+}
+
+/* Form focus effects */
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 2px rgba(0, 255, 245, 0.2), 0 0 20px rgba(0, 255, 245, 0.1);
+}
+
+/* Button hover effects */
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* Disable text selection on animated elements */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
